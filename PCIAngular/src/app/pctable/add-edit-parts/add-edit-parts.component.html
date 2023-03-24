@@ -1,0 +1,49 @@
+<form>
+    <!--- id is auto generated
+    <div class="mb-3 fs-6">
+      <label for="idhelp" class="form-label">ID</label>
+      <input type="text" class="form-control" id="ID" aria-describedby="IDhelp"
+       placeholder="Enter ID" [(ngModel)]="id">
+    </div> --->
+    <div class="mb-3 fs-6">
+      <label for="typeHelp" class="form-label">Type</label>
+      
+      <ng-container *ngIf="part.id == 0">
+
+        <input type="text" class="form-control" id="typeHelp"
+      placeholder="Enter Type" [(ngModel)]="part.tableName" name="tableName">
+
+      </ng-container>
+      <ng-container *ngIf="part.id != 0">
+
+        <input type="text" class="form-control" id="typeHelp"
+      placeholder="Enter Type" [(ngModel)]="part.category" name="category">
+
+      </ng-container>
+      
+      <div id="partsHelp" class="form-text">CASES, CPU, FANS, GPU, MOBO, PSU, RAM, SSD</div>
+    </div>
+    <div class="mb-3 fs-6">
+        <label for="nameHelp" class="form-label">Name</label>
+        <input type="text" class="form-control" id="ID" aria-describedby="nameHelp"
+        placeholder="Enter Name" [(ngModel)]="part.name" name="name">
+      </div>
+      <div class="mb-3 fs-6">
+        <label for="codeHelp" class="form-label">Code</label>
+        <input type="text" class="form-control" id="ID" aria-describedby="codeHelp"
+        placeholder="Enter Code" [(ngModel)]="part.code" name="code">
+      </div>
+      <div class="mb-3 fs-6">
+        <label for="brandHelp" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="ID" aria-describedby="brandHelp"
+        placeholder="Enter Brand" [(ngModel)]="part.brand" name="brand">
+      </div>
+      <div class="mb-3 fs-6">
+        <label for="upHelp" class="form-label">Unit Price</label>
+        <input type="text" class="form-control" id="ID" aria-describedby="upHelp"
+        placeholder="Enter Price" [(ngModel)]="part.unitPrice" name="unitPrice">
+      </div>
+    <button (click)="addParts()" *ngIf="part.id == 0" type="submit" class="btn btn-dark">Submit</button>
+    <button (click)="updateParts()" *ngIf="part.id != 0" type="submit" class="btn btn-dark">Update</button>
+
+</form>
